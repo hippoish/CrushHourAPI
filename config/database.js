@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
-var dbUri = process.env.MONGODB_URI || 'mongodb://localhost/' + process.env.LOCAL_DB;
+var dbUri = process.env.MONGODB_URI || 'mongodb://localhost/crush-hour-api'
+ // + process.env.LOCAL_DB;
 
 if (!process.env.MONGODB_URI) {
   // check that MongoD is running
