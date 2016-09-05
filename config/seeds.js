@@ -24,18 +24,18 @@ var users = [
     l_name: 'Franklin'
   }
 ];
-
-var matches = [
-  {
-    user1 : ,
-    user2 :
-  },
-  {
-    user1 : ,
-    user2 : 
-  }
-
-];
+// 
+// var matches = [
+//   {
+//     user1 : ,
+//     user2 :
+//   },
+//   {
+//     user1 : ,
+//     user2 :
+//   }
+//
+// ];
 
 // clear out all users to start fresh with seeds
 User.remove({}, function(err) {

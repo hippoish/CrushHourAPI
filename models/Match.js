@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
 var matchSchema = new mongoose.Schema({
-  user1    : {
+  users    : [{
     type : mongoose.Schema.Types.ObjectId,
     ref  : 'User'
-  },
-  user2    : {
-    type : mongoose.Schema.Types.ObjectId,
-    ref  : 'User'
-  }
+  }]
+  // user2    : {
+  //   type : mongoose.Schema.Types.ObjectId,
+  //   ref  : 'User'
+  // }
   // ,
   // midpoint : {
   //   latitude  : Number,
