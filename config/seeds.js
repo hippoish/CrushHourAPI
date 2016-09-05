@@ -24,7 +24,7 @@ var users = [
     l_name: 'Franklin'
   }
 ];
-// 
+//
 // var matches = [
 //   {
 //     user1 : ,
@@ -52,16 +52,16 @@ User.remove({}, function(err) {
 });
 
 // clear out all matches to start fresh w/ seeds
-Match.remove({}, function(err) {
-  if(err) console.log(err);
-
-  Match.create(matches, function(err, matches) {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log('Database seeded with ' + matches.length + ' matches.');
-      mongoose.connection.close();
-    }
-    process.exit();
-  });
-});
+// Match.remove({}, function(err) {
+//   if(err) console.log(err);
+//
+//   Match.create(matches, function(err, matches) {
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       console.log('Database seeded with ' + matches.length + ' matches.');
+//       mongoose.connection.close();
+//     }
+//     process.exit();
+//   });
+// });
