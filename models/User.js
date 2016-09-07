@@ -2,10 +2,11 @@ var mongoose = require('mongoose');
 
 // define user schema
 var userSchema = new mongoose.Schema({
-  email  : { type: String, required: true, unique: true},
-  f_name : { type: String, required: true},
-  l_name : { type: String, required: true}
-  // , 
+  email    : { type: String, required: true, unique: true},
+  f_name   : { type: String, required: true},
+  l_name   : { type: String, required: true},
+  facebook : { id : Number }
+  // ,
   // gender : { type: String, required: true},
   // looking_for : { type: String, required: true}
   // ,

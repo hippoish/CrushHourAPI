@@ -1,5 +1,6 @@
 var express = require('express'),
-    router  = express.Router();
+    router  = express.Router(),
+    authController = require('../controllers/authController')
 
 // require controllers
 var usersController   = require('../controllers/users_controller'),
@@ -14,6 +15,9 @@ router.get('/', function(req, res, next) {
 ////// users routes ///////
 ///////////////////////////
 
+// facebook auth route
+router.route('/auth/facebook')
+  .post(authController.index);
 // Routes for api/users
 router.route('/api/users')
   // GET all users
