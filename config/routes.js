@@ -1,10 +1,10 @@
 var express = require('express'),
-    router  = express.Router(),
-    authController = require('../controllers/authController')
+    router  = express.Router();
 
 // require controllers
 var usersController   = require('../controllers/users_controller'),
-    matchesController = require('../controllers/matches_controller');
+    matchesController = require('../controllers/matches_controller'),
+    authController    = require('../controllers/authController');
 
 // GET api instructions page
 router.get('/', function(req, res, next) {
@@ -55,3 +55,8 @@ router.route('/api/matches/:id')
   .delete(matchesController.destroy);
 
 module.exports = router;
+
+
+/////////////////////////////////
+////// access current user //////
+/////////////////////////////////
