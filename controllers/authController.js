@@ -9,7 +9,7 @@ function index(req, res) {
   var params = {
     client_id: req.body.clientId,
     redirect_url: req.body.redirectUri,
-    client_secret: '5f7b18ad8358cca3fc1d7759688fdf81',
+    client_secret: '4fe93bd09854b4344fcc55e126820884',
     code: req.body.code,
     grant_type: 'authorization_code'
   };
@@ -17,6 +17,7 @@ function index(req, res) {
   // exchange auth code for access token
   request.post({ url: accessTokenUrl, form: params, json: true}, function(error, response, body) {
     // link user accounts
+    console.log(body);
     if (req.headers.authorization) {
       User.findOne({ facebookId: body.user.id }, function(err, existingUser) {
         var token = req.headers.authorization.split(' ')[1];
