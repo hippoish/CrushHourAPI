@@ -19,13 +19,28 @@ function index(req, res, next) {
 
 // POST api/users
 function create(req, res, next) {
-  var newUser = new User(req.body);
+  // var newUser = new User(req.body);
+  var loggedinUser = req.body;
+  console.log('loggedinUser', loggedinUser)
 
-  newUser.save(function(error) {
-    if (error) res.json({msg: 'Could not create user because: ' + error});
+  User.findOne({facebookId : loggedinUser.facebookId}, function(err, user) {
+    if (user) {
+      res.json(user);
+      console.log('user',user);
+    } else if (err) {
+      console.log('error is', err);
+      res.json({msg: 'Messed up because ',err});
+    } else {
+      console.log("didn't find user");
+      var newUser = new User(loggedinUser);
 
-    res.json(newUser);
-  })
+      newUser.save(function(error) {
+        if (error) res.json({msg: 'Could not create user because: ' + error});
+
+        res.json(newUser);
+      });
+    }
+  });
 }
 
 // GET api/users/:id
