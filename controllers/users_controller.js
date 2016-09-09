@@ -54,11 +54,15 @@ function show(req, res) {
 
 // PATCH api/users/:id
 function update(req, res) {
+  console.log('this is patch to api/users/:id')
   User.findById(req.params.id, function(error, user) {
+    console.log('returned user:', user)
     if (error) res.json({msg: 'Could not find user because: ' + error});
-
-    var updatedUser = req.body;
-    updatedUser.save(function(error) {
+    console.log('req.params',req.params);
+    console.log('req.body',req.body);
+    user.current_location = req.body.current_location;
+    // updatedUser.current_location = req.body.current_location;
+    user.save(function(error, updatedUser) {
       if (error) res.json({msg: 'Could not update because: ' + error});
 
       res.json({user: updatedUser});

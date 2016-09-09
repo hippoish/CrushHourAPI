@@ -8,10 +8,7 @@ var userSchema = new mongoose.Schema({
   facebookId : String,
   gender : String,
   facebookAccessToken : String,
-  // ,
-  // gender : { type: String, required: true},
-  // looking_for : { type: String, required: true}
-  // ,
+  interested_in : String,
   current_location: {
     lat: Number,
     lng: Number
